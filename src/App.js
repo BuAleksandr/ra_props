@@ -1,23 +1,16 @@
-import logo from './logo.svg';
-import './App.css';
+import Stars from './components/Films/Stars';
+import Listing from './components/Listing/Listing';
+import MessageHistory from './components/Chat/MessageHistory';
+import styles from './App.module.css';
+import dataOffers from './data-offers.json';
+import messages from './data-messages';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={styles.container}>
+      <Stars count={5} />
+      <Listing items={dataOffers} />
+      <MessageHistory list={messages} />
     </div>
   );
 }
