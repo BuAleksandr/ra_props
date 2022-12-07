@@ -25,11 +25,12 @@ export default function ListItem({ item }) {
         </p>
         <p
           className={
-          item.quantity <= 20
+          styles['item-quantity']
+          + (item.quantity <= 20
           ? (item.quantity < 10
           ? ` ${styles['level-low']}`
           : ` ${styles['level-medium']}`)
-          : ` ${styles['level-high']}`
+          : ` ${styles['level-high']}`)
           }
           >{item.quantity} left
         </p>
